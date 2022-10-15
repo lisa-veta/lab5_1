@@ -8,16 +8,22 @@ namespace Lab5_1
             double lastChar = double.NaN;
 
             while (true)
-            {
+            {  
                 string input = Console.ReadLine();  
+
+                if (input == "q")
+                {
+                    break;
+                }
 
                 if (int.TryParse(input, out int number)) 
                 {
                     Console.WriteLine(Convert.ToChar(number));
                 }
 
-                if ((Convert.ToDouble(input) == lastChar) || input == "q")
+                if ((Math.Abc(Convert.ToDouble(input) - lastChar) < 1e-9)
                 {
+                    Console.WriteLine("введеное число равно предыдущему");
                     break;
                 }
                 else
