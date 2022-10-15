@@ -21,9 +21,9 @@ namespace Lab5_1
                     Console.WriteLine(Convert.ToChar(number));
                 }
 
-                if ((Math.Abc(Convert.ToDouble(input) - lastChar) < 1e-9)
+                double doubleNum = double.Parse(input);
+                if (Math.Abs(doubleNum - lastChar) < 1e-9)
                 {
-                    Console.WriteLine("введеное число равно предыдущему");
                     break;
                 }
                 else
