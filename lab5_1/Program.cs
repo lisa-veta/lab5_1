@@ -5,10 +5,11 @@ namespace Lab5_1
     {
         static void Main(string[] args)
         {
-            double lastChar = double.NaN;
+            double lastInput = double.NaN;
 
             while (true)
-            {  
+            {
+                Console.Write("Введите число:");
                 string input = Console.ReadLine();  
 
                 if (input == "q")
@@ -18,19 +19,18 @@ namespace Lab5_1
 
                 if (int.TryParse(input, out int number)) 
                 {
-                    Console.WriteLine(Convert.ToChar(number));
+                    Console.WriteLine($"Число соответсвует символу: {Convert.ToChar(number)}");
                 }
 
                 double doubleNum = double.Parse(input);
-                if (Math.Abs(doubleNum - lastChar) < 1e-9)
+
+                if (input.Contains(',') && Math.Abs(doubleNum - lastInput) < 1e-9)
                 {
+                    Console.WriteLine("Числа равны");
                     break;
                 }
-                else
-                {
-                    lastChar = Convert.ToDouble(input);
-                }
-                
+               
+                lastInput = Convert.ToDouble(input);
             }
         }
     }
