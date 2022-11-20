@@ -1,4 +1,4 @@
-п»їusing System;
+using System;
 namespace Lab5_1
 {
     class Program
@@ -9,29 +9,30 @@ namespace Lab5_1
 
             while (true)
             {
-                Console.Write("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ:");
-                string input = Console.ReadLine();  
+                Console.Write("Введите число:");
+                string input = Console.ReadLine();
 
                 if (input == "q")
                 {
                     break;
                 }
 
-                if (int.TryParse(input, out int number)) 
+                if (int.TryParse(input, out int number))
                 {
-                    Console.WriteLine($"Р§РёСЃР»Рѕ СЃРѕРѕС‚РІРµС‚СЃРІСѓРµС‚ СЃРёРјРІРѕР»Сѓ: {Convert.ToChar(number)}");
+                    Console.WriteLine($"Число соответсвует символу: {Convert.ToChar(number)}");
                 }
 
                 double doubleNum = double.Parse(input);
 
                 if (input.Contains(',') && Math.Abs(doubleNum - lastInput) < 1e-9)
                 {
-                    Console.WriteLine("Р§РёСЃР»Р° СЂР°РІРЅС‹");
+                    Console.WriteLine("Числа равны");
                     break;
                 }
-               
+
                 lastInput = Convert.ToDouble(input);
             }
         }
     }
 }
+
