@@ -9,7 +9,7 @@ namespace Lab5_1
 
             while (true)
             {
-                Console.Write("Введите число:");
+                Console.Write("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ:");
                 string input = Console.ReadLine();
 
                 if (input == "q")
@@ -19,14 +19,14 @@ namespace Lab5_1
 
                 if (int.TryParse(input, out int number))
                 {
-                    Console.WriteLine($"Число соответсвует символу: {Convert.ToChar(number)}");
+                    Console.WriteLine($"Р§РёСЃР»Рѕ СЃРѕРѕС‚РІРµС‚СЃРІСѓРµС‚ СЃРёРјРІРѕР»Сѓ: {Convert.ToChar(number)}");
                 }
 
                 double doubleNum = double.Parse(input);
 
                 if (input.Contains(',') && Math.Abs(doubleNum - lastInput) < 1e-9)
                 {
-                    Console.WriteLine("Числа равны");
+                    Console.WriteLine("Р§РёСЃР»Р° СЂР°РІРЅС‹");
                     break;
                 }
 
